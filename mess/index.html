@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言板</title>
+    <link rel="stylesheet" href="https://unpkg.com/valine/dist/Valine.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
+    <style>
+        /* 样式同上，略去不重要的部分 */
+    </style>
+</head>
+<body>
+
+    <h1>留言板</h1>
+
+    <form id="commentForm">
+        <!-- 留言板表单同上，略去不重要的部分 -->
+    </form>
+
+    <div id="comments"></div>
+
+    <script>
+        function addComment() {
+            // 留言板的 JavaScript 代码同上，略去不重要的部分
+        }
+    </script>
+
+    <script>
+        new Valine({
+            el: '#comments',
+            appId: 'LlEhgVRcX4uuqLEbb92WYMMG-gzGzoHsz',
+            appKey: 'gDRP9Xo7z0zGs3ppLyZAlXKk',
+            placeholder: '快来留下你的评论吧~',
+            avatar: 'mp',
+            visitor: true
+        });
+    </script>
+
+</body>
+</html>
