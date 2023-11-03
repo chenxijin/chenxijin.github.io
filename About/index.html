@@ -228,10 +228,9 @@
           
 			 <h2>基本信息</h2>
 
-  <h3>关于我</h3>
   <p>
     <strong>性别:</strong> 男<br>
-    <strong>年龄:</strong> 27岁（1996年出生）<br>
+    <strong>年龄:</strong> 27岁（96年腊月）<br>
     <strong>身高体重:</strong> 身高182cm，体重70kg<br>
     <strong>居住地:</strong> 老家台儿庄，现户口已迁至历城
   </p>
@@ -243,21 +242,24 @@
     <strong>薪资:</strong> 年薪15万+
   </p>
 
-  <h3>基本情况</h3>
+  <h3>基本情况:</h3>
   <p>
     年轻时候以事业为主,一直没时间找对象,现在家里催的紧.自己也打算结婚啦.
-	独生子,爸妈在上海工作15年了,临近退休有退休金.家里还有爷爷奶奶.
-	我是水瓶座,工作是在化工领域从事大数据软件研发,8小时双休制私人时间比较充裕.
-	平时空闲时间会去图书馆上自习目前在提升学历中.偶尔打打羽毛球,家里有一只猫.
-	目前户口已迁到济南,台庄有一套房子,济南有一套.无车
+  </p>
+   <p>
+   我是独生子,爸妈在上海工作15年了,临近退休有退休金.家里还有爷爷奶奶.
+   </p>
+   <p>
+   我是水瓶座,工作是在化工领域从事大数据软件研发,8小时双休制私人时间比较充裕.
+  </p>
+   <p>
+    平时空闲时间会去图书馆上自习目前在提升学历中.偶尔打打羽毛球,家里有一只猫.
+  </p>
+   <p>
+   目前户口已迁到济南,台庄有一套房子,济南有一套.无车
   </p>
 
-  <h3>财务及资产</h3>
-  <p>
-    目前户口已迁至济南，在老家台庄和济南都拥有不动产，无车.
-  </p>
-
-  <h3>期望的另一半</h3>
+  <h3>期望的另一半:</h3>
   <p>
     <strong>外貌条件:</strong> 希望对方身高>=160cm，五官端正，身材匀称。<br>
     <strong>性格要求:</strong> 温和善良，人品正直，情绪相对稳定。<br>
@@ -273,21 +275,33 @@
   <div class="image-container">
     <img src="./可乐.jpg" alt="图片2描述">
   </div>
+  
+  <h3>MBTI:</h3>
+  <div class="image-container">
+    <img src="./mbti.png" alt="图片1描述">
+  </div>
+  
+  
+   <h3>会点家常菜:</h3>
+   
+   <div class="image-container">
+    <img src="./1.jpg" alt="图片1描述">
+    <img src="./2.jpg" alt="图片1描述">
+    <img src="./3.jpg" alt="图片1描述">
+    <img src="./4.jpg" alt="图片1描述">
+    <img src="./5.jpg" alt="图片1描述">
+	
+  </div>
+
 
  <h3>个人简历</h3>
-  <div class="pdf-container">
-    <object data="./工作简历.pdf" type="application/pdf" width="100%" height="100%">
-      <p>抱歉，无法显示PDF文件。你可以<a href="路径/到/你的文件.pdf">下载PDF文件</a>查看。</p>
-    </object>
+ <button class="preview-button" onclick="openPDFPreview()">预览简历</button>
+ <div class="pdf-container" id="pdfContainer">
+    <iframe src="./工作简历.pdf" title="个人简历"></iframe>
   </div>
-
         </div>
         <div class="row mt-2">
-  <h3>Search</h3>
-  <div><input id="search-text" title="search" class="search-text" type="text" placeholder="search......"></div>
-  <div style="margin-top: 1.5rem;">
-    <ul id="result"></ul>
-  </div>
+
 </div>
         <div class="row mt-2">
   
@@ -312,6 +326,19 @@
   <script src="/js/nanobar.min.js"></script>
 
   <script>
+  
+    function openPDFPreview() {
+      // 替换为你的 PDF 文件路径
+      var pdfUrl = "./工作简历.pdf";
+      // 打开新窗口
+      var newWindow = window.open(pdfUrl, "_blank");
+      // 设置新窗口的大小
+      newWindow.resizeTo(800, 600); // 你可以调整大小
+      // 移动新窗口到屏幕中央
+      newWindow.moveTo((window.screen.width - 800) / 2, (window.screen.height - 600) / 2);
+      // 设置新窗口不可调整大小
+      newWindow.resizable = false;
+    }
   new Valine({
             el: '#comments',
             appId: 'LlEhgVRcX4uuqLEbb92WYMMG-gzGzoHsz',
@@ -329,7 +356,6 @@
     nanobar.go(76);
     nanobar.go(100);
 	
-
   </script>
 
 </body>
