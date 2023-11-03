@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +15,7 @@
   
   <title>All Posts - John Doe</title>
   
-  <link rel="canonical" href="http://example.com/archives/2023/11/">
+  <link rel="canonical" href="http://example.com/archives/2023/10/">
   
   <meta name="description" content="">
   
@@ -30,7 +32,7 @@
   
   <meta property="og:description" content="">
   
-  <meta property="og:url" content="http://example.com/archives/2023/11/" />
+  <meta property="og:url" content="http://example.com/archives/2023/10/" />
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="All Posts - John Doe">
@@ -42,7 +44,7 @@
   <meta name="twitter:image" content="http://example.com/images/thumbnail.jpg">
   
   
-  <meta name="twitter:url" content="http://example.com/archives/2023/11/" />
+  <meta name="twitter:url" content="http://example.com/archives/2023/10/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -74,7 +76,9 @@
   
   
 <link rel="stylesheet" href="/css/user.css">
-
+<link rel="stylesheet" href="https://unpkg.com/valine/dist/Valine.min.css">
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
   
 
   <!-- Favicon
@@ -134,7 +138,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 7.0.0-rc2"></head>
 
 <body>
   <div class="container">
@@ -208,24 +212,17 @@
 
         <div class="trans">
           
-<h2>All Posts</h2>
+<form id="commentForm">
+        <!-- 留言板表单同上，略去不重要的部分 -->
+    </form>
 
+    <div id="comments"></div>
 
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Nov 3, 2023</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2023/11/03/ceshi/" class="">
-            
-              no title
-            
-          </a>
-        </div>
-      </div>
-    </article>
+    <script>
+        function addComment() {
+            // 留言板的 JavaScript 代码同上，略去不重要的部分
+        }
+    </script>
 
 <div class="pagination-bar">
   <ul class="pagination">
@@ -299,6 +296,14 @@
   <script src="/js/nanobar.min.js"></script>
 
   <script>
+  new Valine({
+            el: '#comments',
+            appId: 'LlEhgVRcX4uuqLEbb92WYMMG-gzGzoHsz',
+            appKey: 'gDRP9Xo7z0zGs3ppLyZAlXKk',
+            placeholder: '快来留下你的评论吧~',
+            avatar: 'mp',
+            visitor: true
+        });
     var options = {
       classname: 'nanobar',
       id: 'myNanobar'
@@ -307,6 +312,8 @@
     nanobar.go(30);
     nanobar.go(76);
     nanobar.go(100);
+	
+
   </script>
 
 </body>
