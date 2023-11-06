@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+
+
+    <link rel="canonical" href="http://example.com/archives/2023/10/">
+
+    <meta name="description" content="">
+
+
+    <meta name="author" content="JCHEN">
+
+
+    <meta property="og:image" content="http://example.com/images/thumbnail.jpg">
+
+
+    <meta property="og:site_name" content="Hexo" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="All Posts - CHEN" />
+
+    <meta property="og:description" content="">
+
+    <meta property="og:url" content="http://example.com/archives/2023/10/" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="All Posts - CHEN">
+
+    <meta name="twitter:description" content="">
+
+
+
+    <meta name="twitter:image" content="http://example.com/images/thumbnail.jpg">
+
+
+    <meta name="twitter:url" content="http://example.com/archives/2023/10/" />
+
+    <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="preload" href="/fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+    <link rel="stylesheet" href="/css/normalize.css">
+
+
+    <link rel="stylesheet" href="/css/skeleton.css">
+
+
+    <link rel="stylesheet" href="/css/custom.css">
+
+
+    <link rel="stylesheet" href="/css/prism-dark.css">
+
+
+    <link rel="stylesheet" href="/css/prism-line-numbers.css">
+
+    <!-- User css -->
+
+
+    <link rel="stylesheet" href="/css/user.css">
+    <link rel="stylesheet" href="https://unpkg.com/valine/dist/Valine.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
+
+
+    <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+
+    <title>My Book List</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        img {
+            max-width: 100px;
+            max-height: 150px;
+            margin-right: 10px;
+        }
+
+        .book-details {
+            flex: 1;
+        }
+
+        .book-title {
+            font-weight: bold;
+        }
+
+        .author {
+            color: #555;
+        }
+
+        .details-btn {
+            background-color: #3498db;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        section p {
+            font-size: 0.9em; 
+            line-height: 1.5;
+            margin-bottom: 10px; 
+        }
+    </style>
+    <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
+
+    <script src="/js/pic.min.js" defer></script>
+
+
+
+
+    <meta name="generator" content="Hexo 7.0.0-rc2">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div>
+
+                <div class="row">
+                    <div class="two columns" style="max-width: 50px">
+                        <h1 class="mt-2 mode">
+                            <div onclick=setDarkMode(true) id="darkBtn">🌑</div>
+                            <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
+                            <script>
+                                if (localStorage.getItem('preferredTheme') == 'dark') {
+                                    setDarkMode(true)
+                                }
+                                function setDarkMode(isDark) {
+                                    var darkBtn = document.getElementById('darkBtn')
+                                    var lightBtn = document.getElementById('lightBtn')
+                                    if (isDark) {
+                                        lightBtn.style.display = "block"
+                                        darkBtn.style.display = "none"
+                                        localStorage.setItem('preferredTheme', 'dark');
+                                    } else {
+                                        lightBtn.style.display = "none"
+                                        darkBtn.style.display = "block"
+                                        localStorage.removeItem('preferredTheme');
+                                    }
+                                    document.body.classList.toggle("darkmode");
+                                }
+                            </script>
+                        </h1>
+                    </div>
+
+                    <div class="six columns ml-1">
+                        <h1 class="mt-2">
+                            Hi Folks.
+                        </h1>
+                    </div>
+
+                    <div class="twelve columns">
+                        <div class="row">
+                            <div class="nine columns left">
+                                <a href="/">Home</a>
+
+
+                                <a target="_blank" rel="noopener" href="https://16personalities.com/ch"
+                                    class="ml">MBTI</a>
+
+
+                                <a href="/About" class="ml">关于我</a>
+
+
+
+                                <a href="/mess" class="ml">留言板</a>
+
+
+                                <a href="/books" class="ml">Books</a>
+
+
+
+                                <a href="mailto:test@test.test" target="_blank" class="ml">Email</a>
+
+
+                            </div>
+                        </div>
+                        <hr style="margin-bottom: 2.6rem">
+                    </div>
+                </div>
+
+                <div class="trans">
+                    <header>
+                        <h1>My Book List</h1>
+                    </header>
+                    <section>
+                        <h2>Currently Reading</h2>
+                        <ul id="currentlyReadingList">
+                            <!-- Books will be dynamically added here -->
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Read</h2>
+                        <ul id="readList">
+                            <!-- Books will be dynamically added here -->
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>声明:</h2>
+                        <p>封面仅供参考。</p>
+                        <p>本网站使用了他人已经发表的作品，其目的仅限于个人学习、研究或者欣赏。在使用这些作品时，我们已经尽最大努力遵循著作权法第四节第二十二条的相关规定。</p>
+                        <p>我们承诺在使用作品时注明了作者姓名和作品名称，并且不侵犯著作权人依照法律享有的其他权利。如果您是作品的著作权人，如有任何异议，请及时与我们联系，我们将立即采取措施进行处理。</p>
+                    </section>
+
+                </div>
+
+                <div class="row mt-2">
+
+                    <div class="eight columns">
+                        <p id="madewith">Made with ❤ and
+                            <a class="footer-link icon" href="https://hexo.io" target="_blank"
+                                style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
+                                <svg class="hexo svg-hov" width="14" role="img" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24">
+                                    <title>Hexo.js</title>
+                                    <path
+                                        d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z" />
+                                </svg>
+                            </a>
+
+                            at <a href="https://en.wikipedia.org/wiki/Earth" target="_blank" rel="noreferrer">Earth</a>.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="/js/nanobar.min.js"></script>
+
+    <script>
+        // Example book data
+        var currentlyReadingBooks = [
+            { title: '瓦尔登湖', author: '[美] 亨利·戴维·梭罗', image: 'http://lc-LlEhgVRc.cn-n1.lcfile.com/vCp7CogxQK83toavLM6H7wBwLC37csCw/1699252667449.jpg', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', link: './瓦尔登湖.pdf' },
+            // Add more currently reading books as needed
+        ];
+
+        var readBooks = [
+            { title: '《Java编程思想第4版》', author: '[美] Bruce Eckel', image: 'http://lc-LlEhgVRc.cn-n1.lcfile.com/lb3dFHaU9C4VyW70kz2fWNB8QnifiakU/1699253782571.jpg', details: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.', link: './Java编程思想第4版.pdf' },
+            { title: '《被讨厌的勇气：“自我启发之父”阿德勒的哲学课》', author: '[日] 岸见一郎', image: 'http://lc-LlEhgVRc.cn-n1.lcfile.com/2LIlSH3q6vGs8i5EwP9F919qkqxNzL85/1699254871457.jpg', details: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.', link: './被讨厌的勇气.epub'},
+            // Add more read books as needed
+            { title: '《非暴力沟通》', author: '[美] 马歇尔·卢森堡 Marshall B.Rosenberg', image: 'http://lc-LlEhgVRc.cn-n1.lcfile.com/QDQEh5rRwzNTotCF9axCS6lqwB42tClW/1699255303056.jpg', details: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.', link: './非暴力沟通.pdf' },
+            { title: '《古今数学思想》', author: '莫里斯•克莱因', image: 'http://lc-LlEhgVRc.cn-n1.lcfile.com/lLulLxGtbEdz1aFJX8p2k7OCRV6y5X5M/1699255390282.jpg', details: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.', link: './古今数学思想.pdf' },
+            { title: '《计算机组成原理》', author: '蒋本珊', image: 'http://lc-LlEhgVRc.cn-n1.lcfile.com/WdWC0D61TfYjpLBgrjCh0A3SWANYUoPy/1699255508489.jpg', details: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.', link: './计算机组成原理.pdf' },
+        ];
+
+        // Function to render books in the specified list
+        function renderBooks(listId, books) {
+            var list = document.getElementById(listId);
+
+            books.forEach(function (book) {
+                var li = document.createElement('li');
+                li.innerHTML = `
+                    <img src="${book.image}" alt="${book.title}">
+                    <div class="book-details">
+                        <span class="book-title">${book.title}</span>
+                        <span class="author">${book.author}</span>
+                    </div>
+                    <a href="${book.link}" target="_blank" class="book-link">
+                        <button class="details-btn">Details</button>
+                    </a>
+                `;
+                list.appendChild(li);
+            });
+        }
+
+        // Render books on page load
+        window.onload = function () {
+            renderBooks('currentlyReadingList', currentlyReadingBooks);
+            renderBooks('readList', readBooks);
+        };
+    </script>
+
+</body>
+
+</html>
